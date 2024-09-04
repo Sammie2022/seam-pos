@@ -28,8 +28,6 @@ import { AppRoutingModule } from './app-routing.module';
     ReactiveFormsModule,
     HttpClientModule,
     MatToolbarModule,
-    MatSidenavModule,
-    MatIconModule,
     MatListModule,
     MatButtonModule,
     AppRoutingModule
