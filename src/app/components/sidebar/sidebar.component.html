@@ -1,0 +1,24 @@
+<mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #sidenav mode="side" opened>
+      <mat-nav-list>
+        <mat-list-item routerLink="/dashboard">Dashboard</mat-list-item>
+        <mat-list-item routerLink="/customers">Customers</mat-list-item>
+        <mat-list-item routerLink="/items">Stock Items</mat-list-item>
+        <mat-list-item routerLink="/item-kits">Services</mat-list-item>
+        <mat-list-item routerLink="/expenses">Expenses</mat-list-item>
+        <mat-list-item routerLink="/suppliers">Suppliers</mat-list-item>
+        <mat-list-item routerLink="/reports">Reports</mat-list-item>
+        <mat-list-item routerLink="/receivings">Receivings</mat-list-item>
+        <mat-list-item routerLink="/allocations">Stock Allocations</mat-list-item>
+        <mat-list-item routerLink="/employee-sales">Field Sales</mat-list-item>
+        <mat-list-item routerLink="/sales">Shop Sales</mat-list-item>
+        <mat-list-item routerLink="/employees">Employees</mat-list-item>
+        <mat-list-item routerLink="/config">Store Config</mat-list-item>
+        <mat-list-item routerLink="/locations">Locations</mat-list-item>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <ng-content></ng-content>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+  
