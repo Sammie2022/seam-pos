@@ -1,38 +1,27 @@
-import { NgModule } from '@angular/core';
+import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { RouterOutlet } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
-import { MatToolbarModule } from '@angular/material/toolbar';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatIconModule } from '@angular/material/icon';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatListModule } from '@angular/material/list';
-import { MatButtonModule } from '@angular/material/button';
-import { AppComponent } from './app.component';
-import { HeaderComponent } from './components/header/header.component';
-import { SidebarComponent } from './components/sidebar/sidebar.component';
-import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { FooterComponent } from './components/footer/footer.component';
-import { AppRoutingModule } from './app-routing.module';
+import { SharedModule } from './shared/shared.module';
 
-@NgModule({
-  declarations: [
-    AppComponent,
-    HeaderComponent,
-    SidebarComponent,
-    DashboardComponent,
-    FooterComponent
-  ],
+@Component({
+  selector: 'app-root',
+  standalone: true,
   imports: [
+    CommonModule,
+    RouterOutlet,
     BrowserModule,
-    FormsModule,
-    ReactiveFormsModule,
-    HttpClientModule,
+    BrowserAnimationsModule, 
+    MatSidenavModule,
     MatToolbarModule,
     MatListModule,
-    MatButtonModule,
-    AppRoutingModule
+    SharedModule  // Import the module containing your components
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
 })
-export class AppModule { }
+export class AppComponent {}
