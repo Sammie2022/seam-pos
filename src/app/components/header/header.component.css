@@ -1,0 +1,9 @@
+#content-header h1 {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  #breadcrumb a {
+    color: #333;
+    font-weight: bold;
+  }
+  

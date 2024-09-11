@@ -1,0 +1,64 @@
+<div id="content-header" class="hidden-print">
+    <h1><i class="icon fa fa-dashboard"></i> Dashboard</h1>
+  </div>
+  
+  <div id="breadcrumb" class="hidden-print">
+    <a href="#"><i class="fa fa-home"></i> Dashboard</a>
+  </div>
+  
+  <div class="clear"></div>
+  
+  <div class="text-center">
+    <h1>Welcome to <b>Seam POS</b></h1>
+    <ul class="quick-actions">
+      <li><a class="right" href="/customers"><i class="text-info fa fa-group left fa"></i> Customers</a></li>
+      <li><a class="right" href="/items"><i class="text-info fa fa-table left fa"></i> Stock Items</a></li>
+      <li><a class="right" href="/item_kits"><i class="text-info fa fa-inbox left fa"></i> Services</a></li>
+      <li><a class="right" href="/expenses"><i class="text-info fa fa-money left fa"></i> Expenses</a></li>
+      <li><a class="right" href="/suppliers"><i class="text-info fa fa-download left fa"></i> Suppliers</a></li>
+      <li><a class="right" href="/reports"><i class="text-info fa fa-bar-chart-o left fa"></i> Reports</a></li>
+      <li><a class="right" href="/receivings"><i class="text-info fa fa-cloud-download left fa"></i> Receivings</a></li>
+      <li><a class="right" href="/allocations"><i class="text-info fa fa-location-arrow left fa"></i> Stock Allocations</a></li>
+      <li><a class="right" href="/employee_sales"><i class="text-info fa fa-shopping-cart left fa"></i> Field Sales</a></li>
+      <li><a class="right" href="/sales"><i class="text-info fa fa-shopping-cart left fa"></i> Shop Sales</a></li>
+      <li><a class="right" href="/employees"><i class="text-info fa fa-user left fa"></i> Employees</a></li>
+      <li><a class="right" href="/config"><i class="text-info fa fa-cogs left fa"></i> Store Config</a></li>
+      <li><a class="right" href="/locations"><i class="text-info fa fa-home left fa"></i> Locations</a></li>
+    </ul>
+  
+    <div class="row">
+      <div class="widget-box">
+        <div class="widget-title">
+          <span class="icon"><i class="fa fa-signal"></i></span>
+          <h5> Statistics</h5>
+        </div>
+        <div class="widget-content">
+          <div class="row">
+            <div class="col-md-4">
+              <ul class="site-stats">
+                <li><a href="/items"><h3><i class="fa fa-shopping-cart"></i> Total Stock Items : <strong>{{ stats.totalStockItems }}</strong></h3></a></li>
+              </ul>
+            </div>
+            <div class="col-md-4">
+              <ul class="site-stats">
+                <li><a href="/customers"><h3><i class="fa fa-group"></i> Total Customers : <strong>{{ stats.totalCustomers }}</strong></h3></a></li>
+              </ul>
+            </div>
+            <div class="col-md-4">
+              <ul class="site-stats">
+                <li><a href="/employees"><h3><i class="fa fa-user"></i> Total Employees : <strong>{{ stats.totalEmployees }}</strong></h3></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div id="footer" class="col-md-12 hidden-print">
+    Please visit our 
+    <a href="https://seamlineinnovations.com/" target="_blank">website</a> 
+    to learn the latest information about the system.
+    <span class="text-info">You are using SeamPos Version <span class="label label-info">{{ systemVersion }}</span></span>
+  </div>
+  

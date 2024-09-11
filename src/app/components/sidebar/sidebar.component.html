@@ -1,0 +1,8 @@
+<ul class="quick-actions">
+    <li *ngFor="let item of menuItems">
+      <a class="right" [routerLink]="item.link">
+        <i class="text-info fa {{ item.icon }} left fa"></i> {{ item.title }}
+      </a>
+    </li>
+  </ul>
+  
