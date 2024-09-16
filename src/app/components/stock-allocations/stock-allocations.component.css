@@ -1,0 +1,40 @@
+/* Main card styling */
+.stock-card {
+    margin: 20px;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+  }
+  
+  /* Form container styling */
+  .form-container {
+    margin-bottom: 20px;
+  }
+  
+  mat-form-field {
+    width: 100%;
+  }
+  
+  /* Data card styling */
+  .data-card {
+    margin-top: 20px;
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  li {
+    padding: 8px 0;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  /* Button styling */
+  button {
+    margin-top: 10px;
+  }
+  

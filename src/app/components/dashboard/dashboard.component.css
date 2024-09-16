@@ -1,33 +1,84 @@
-.content-header {
-  margin: 20px 0;
-  text-align: center;
+/* Card styling */
+.dashboard-card {
+  margin: 20px;
+  padding: 20px;
+  background-color: #fafafa; /* Softer background */
 }
 
-.breadcrumb a {
-  text-decoration: none;
-  color: #00796b;
+.welcome-text {
+  text-align: center;
+  margin: 20px 0;
+  color: #333; /* Darker text for better readability */
 }
 
 .quick-actions {
-  margin: 20px 0;
+  margin-top: 20px;
 }
 
-.quick-action-card {
-  margin: 10px;
+.action-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff; /* Clean white background */
+  border-radius: 12px; /* Slightly more rounded corners */
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); /* Softer shadow */
+  text-align: center;
+  padding: 20px;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.action-card:hover {
+  background-color: #e8f5e9; /* Light green for a refreshing look */
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+.action-card mat-icon {
+  font-size: 48px;
+  color: #388e3c; /* Darker green for icons */
+}
+
+.statistics {
+  margin-top: 20px;
+}
+
+.stats-card {
+  background-color: #ffffff;
+  border: 1px solid #dcdcdc; /* Slightly darker border */
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.stats-grid {
+  display: flex;
+  gap: 20px;
+}
+
+.stat-item {
+  flex: 1;
+  background-color: #f1f8e9; /* Very light green background */
+  border-radius: 12px;
   padding: 20px;
   text-align: center;
 }
 
-.mat-icon {
-  font-size: 40px;
-}
-
-.statistics .mat-card {
-  margin: 10px 0;
+.stat-item mat-icon {
+  font-size: 36px;
+  color: #388e3c; /* Darker green for icons */
 }
 
 .footer {
-  margin-top: 30px;
-  padding: 20px;
-  background-color: #f0f0f0;
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #388e3c; /* Darker green background */
+  color: #fff;
+  text-align: center;
+}
+
+.footer a {
+  color: #c8e6c9; /* Light green for links */
+}
+
+.footer .text-info {
+  display: block;
+  margin-top: 10px;
 }

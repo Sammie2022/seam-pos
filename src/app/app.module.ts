@@ -19,7 +19,12 @@ import { StoreConfigComponent } from './components/store-config/store-config.com
 import { ReactiveFormsModule } from '@angular/forms'; // Import ReactiveFormsModule
 import { StockAllocationsComponent } from './components/stock-allocations/stock-allocations.component';
 import { HttpClientModule } from '@angular/common/http'; // Import HttpClientModule
-
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatButtonModule } from '@angular/material/button';
+import { SuppliersComponent } from './components/suppliers/suppliers.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { FieldSalesComponent } from './components/field-sales/field-sales.component';
 
 @Component({
   selector: 'app-root',
@@ -28,7 +33,11 @@ import { HttpClientModule } from '@angular/common/http'; // Import HttpClientMod
   standalone: true,
   imports: [
     RouterModule,
+    SuppliersComponent,
     HttpClientModule,
+    MatCheckboxModule,
+    MatButtonModule,
+    FieldSalesComponent,
     SidebarComponent, 
     StockItemsComponent,
     StockAllocationsComponent,
@@ -44,6 +53,11 @@ import { HttpClientModule } from '@angular/common/http'; // Import HttpClientMod
     MatPaginator,
     MatTableModule,
     BrowserAnimationsModule,
+    MatTableModule,
+    MatCheckboxModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule,
     MatCardModule,
     MatToolbarModule,
     CommonModule,

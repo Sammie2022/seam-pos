@@ -1,0 +1,34 @@
+.shop-sales-card {
+    margin: 16px;
+    padding: 16px;
+  }
+  
+  .toolbar {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+  }
+  
+  .table-container {
+    overflow: auto;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th.mat-header-cell, td.mat-cell {
+    padding: 8px;
+    text-align: left;
+  }
+  
+  mat-card-title {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  button {
+    margin-right: 8px;
+  }
+  

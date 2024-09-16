@@ -1,1 +1,88 @@
-<p>expenses works!</p>
+<div id="content-header" class="hidden-print">
+    <h1>
+      <i class="icon fa fa-user"></i> Expenses
+    </h1>
+  </div>
+  
+  <div id="breadcrumb" class="hidden-print">
+    <a href="https://www.poss.seamlineinnovations.com/index.php">
+      <i class="fa fa-home"></i> Dashboard
+    </a>
+  </div>
+  
+  <div class="clear"></div>
+  
+  <div class="pull-right">
+    <div class="row">
+      <div class="col-md-12 center" style="text-align: center;">
+        <div class="btn-group">
+          <a href="https://www.poss.seamlineinnovations.com/index.php/expenses/view/-1" id="new-person-btn" class="btn btn-primary" title="New Expense">
+            <i title="New Expense" class="fa fa-pencil tip-bottom hidden-lg fa fa-2x"></i>
+            <span class="visible-lg">New Expense</span>
+          </a>
+          <a href="https://www.poss.seamlineinnovations.com/index.php/expenses/delete" id="delete" class="btn btn-danger disabled delete_inactive" title="Delete">
+            <i title="Delete" class="fa fa-trash-o tip-bottom hidden-lg fa fa-2x"></i>
+            <span class="visible-lg">Delete</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="row">
+    <form action="https://www.poss.seamlineinnovations.com/index.php/expenses/search" method="post" accept-charset="utf-8" id="search_form" autocomplete="off">
+      <input type="text" name="search" id="search" value="" placeholder="Search Expenses" />
+    </form>
+  </div>
+  
+  <div class="row">
+    <div class="col-md-12">
+      <div class="widget-box">
+        <div class="widget-title">
+          <span class="icon">
+            <i class="fa fa-th"></i>
+          </span>
+          <h5>List of Expenses</h5>
+          <span title="2 total expenses" class="label label-info tip-left">2</span>
+          <a href="https://www.poss.seamlineinnovations.com/index.php/expenses/clear_state" class="clear-state pull-right">clear search</a>
+        </div>
+        <div class="widget-content nopadding table_holder table-responsive">
+          <table class="tablesorter table table-bordered table-striped table-hover" id="sortable_table">
+            <thead>
+              <tr>
+                <th class="leftmost">
+                  <input type="checkbox" id="select_all" />
+                </th>
+                <th>Expense Name</th>
+                <th>Amount Spent #</th>
+                <th>&nbsp;</th>
+                <th class="rightmost">&nbsp;</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><input type="checkbox" id="person_3616" value="3616" /></td>
+                <td>bed</td>
+                <td>150.0000000000</td>
+                <td class="rightmost"><a href="https://www.poss.seamlineinnovations.com/index.php/expenses/view/3616/2">Edit</a></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" id="person_3608" value="3608" /></td>
+                <td>CAR WASH</td>
+                <td>200.0000000000</td>
+                <td class="rightmost"><a href="https://www.poss.seamlineinnovations.com/index.php/expenses/view/3608/2">Edit</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div id="footer" class="col-md-12 hidden-print">
+    Please visit our 
+    <a href="https://seamlineinnovations.com/" target="_blank">website</a> 
+    to learn the latest information about the system.
+    <span class="text-info">You are using SeamPos Version <span class="label label-info">1.2</span></span>
+  </div>
+  

@@ -1,18 +1,34 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { HttpClient } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
+import { MatCardModule } from '@angular/material/card';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
+import { MatOptionModule } from '@angular/material/core';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-stock-allocation',
   standalone: true,
   templateUrl: './stock-allocations.component.html',
-  styleUrls: ['./stock-allocations.component.css']
+  styleUrls: ['./stock-allocations.component.css'],
+  imports: [
+    CommonModule,
+    ReactiveFormsModule,
+    MatCardModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatOptionModule
+  ]
 })
 export class StockAllocationsComponent implements OnInit {
   modeForm: FormGroup;
   employeeForm: FormGroup;
+  categories: any[] = []; // Mock categories
+  items: any[] = []; // Mock items
+  employees: any[] = []; // Mock employees
 
-  constructor(private fb: FormBuilder, private http: HttpClient) {
+  constructor(private fb: FormBuilder) {
     this.modeForm = this.fb.group({
       mode: ['allocate']
     });
@@ -24,34 +40,39 @@ export class StockAllocationsComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadCategories();
+    this.loadItems();
+    this.loadEmployees();
   }
 
   onModeSubmit(): void {
-    this.http.post('https://www.poss.seamlineinnovations.com/index.php/allocations/change_mode', this.modeForm.value)
-      .subscribe(response => {
-        // Handle response
-      });
+    console.log('Mode submitted:', this.modeForm.value);
   }
 
   onEmployeeSubmit(): void {
-    this.http.post('https://www.poss.seamlineinnovations.com/index.php/allocations/select_employee', this.employeeForm.value)
-      .subscribe(response => {
-        // Handle response
-      });
+    console.log('Employee submitted:', this.employeeForm.value);
   }
 
   loadCategories(): void {
-    this.http.get('https://www.poss.seamlineinnovations.com/index.php/sales/categories')
-      .subscribe((json: any) => {
-        this.processCategoriesResult(json);
-      });
+    // Mock categories
+    this.categories = [
+      { id: 1, name: 'Category A' },
+      { id: 2, name: 'Category B' }
+    ];
   }
 
-  processCategoriesResult(json: any): void {
-    // Process categories result
+  loadItems(): void {
+    // Mock items
+    this.items = [
+      { id: 1, name: 'Item A' },
+      { id: 2, name: 'Item B' }
+    ];
   }
 
-  processItemsResult(json: any): void {
-    // Process items result
+  loadEmployees(): void {
+    // Mock employees
+    this.employees = [
+      { id: 1, name: 'Employee A' },
+      { id: 2, name: 'Employee B' }
+    ];
   }
 }

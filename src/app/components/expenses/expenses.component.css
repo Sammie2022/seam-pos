@@ -1,0 +1,38 @@
+.container {
+    padding: 16px;
+  }
+  
+  .header {
+    margin-bottom: 16px;
+  }
+  
+  .actions {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+  
+  mat-form-field {
+    width: 100%;
+    margin-bottom: 16px;
+  }
+  
+  mat-card {
+    margin-bottom: 16px;
+  }
+  
+  mat-table {
+    width: 100%;
+  }
+  
+  .footer {
+    margin-top: 16px;
+    padding: 16px;
+    border-top: 1px solid #ddd;
+    text-align: center;
+  }
+  
+  .version {
+    font-weight: bold;
+  }
+  
