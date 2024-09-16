@@ -1,53 +1,92 @@
-<!-- customer.component.html -->
-<div class="container">
-    <h1 class="text-center">Customers</h1>
-  
-    <div class="row mb-3">
-      <div class="col-md-12 text-center">
-        <button class="btn btn-primary" (click)="addCustomer()">New Customer</button>
-        <button class="btn btn-primary" [disabled]="!selectedCustomers.length" (click)="sendEmail()">E-Mail</button>
-        <button class="btn btn-primary" (click)="importExcel()">Excel Import</button>
-        <button class="btn btn-primary" (click)="exportExcel()">Excel Export</button>
-        <button class="btn btn-danger" [disabled]="!selectedCustomers.length" (click)="deleteCustomers()">Delete</button>
-        <button class="btn btn-warning" (click)="cleanupCustomers()">Cleanup old customers</button>
+<div class="container py-5">
+  <div class="card shadow-sm">
+    <div class="card-header bg-primary text-white text-center">
+      <h2>Customer Management</h2>
+    </div>
+
+    <div class="card-body">
+      <!-- Action Buttons -->
+      <div class="row mb-4 justify-content-center">
+        <div class="col-auto">
+          <button class="btn btn-success mx-2" (click)="addCustomer()">
+            <i class="fas fa-user-plus"></i> New Customer
+          </button>
+          <button class="btn btn-secondary mx-2" [disabled]="!selectedCustomers.length" (click)="sendEmail()">
+            <i class="fas fa-envelope"></i> Send Email
+          </button>
+          <button class="btn btn-warning mx-2" (click)="importExcel()">
+            <i class="fas fa-file-import"></i> Import Excel
+          </button>
+          <button class="btn btn-info mx-2" (click)="exportExcel()">
+            <i class="fas fa-file-export"></i> Export Excel
+          </button>
+          <button class="btn btn-danger mx-2" [disabled]="!selectedCustomers.length" (click)="deleteCustomers()">
+            <i class="fas fa-trash-alt"></i> Delete
+          </button>
+          <button class="btn btn-dark mx-2" (click)="cleanupCustomers()">
+            <i class="fas fa-broom"></i> Cleanup
+          </button>
+        </div>
+      </div>
+
+      <!-- Search Bar -->
+      <div class="row mb-3">
+        <div class="col-md-6 offset-md-3">
+          <input
+            type="text"
+            class="form-control form-control-lg"
+            [(ngModel)]="searchQuery"
+            placeholder="Search Customers"
+            (input)="filterCustomers()"
+          />
+        </div>
+      </div>
+
+      <!-- Customer Table -->
+      <div class="table-responsive">
+        <table class="table table-striped table-hover">
+          <thead class="table-dark">
+            <tr>
+              <th>
+                <input type="checkbox" (change)="toggleAll($event)" />
+              </th>
+              <th>Person ID</th>
+              <th>Last Name</th>
+              <th>First Name</th>
+              <th>E-Mail</th>
+              <th>Phone Number</th>
+              <th>Balance</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let customer of filteredCustomers">
+              <td>
+                <input type="checkbox" [(ngModel)]="customer.selected" (change)="updateSelection()" />
+              </td>
+              <td>{{ customer.personId }}</td>
+              <td>{{ customer.lastName }}</td>
+              <td>{{ customer.firstName }}</td>
+              <td>
+                <a [href]="'mailto:' + customer.email">{{ customer.email || 'N/A' }}</a>
+              </td>
+              <td>{{ customer.phoneNumber || 'N/A' }}</td>
+              <td>{{ customer.balance }}</td>
+              <td>
+                <button class="btn btn-sm btn-info me-2" (click)="viewCustomer(customer)">
+                  <i class="fas fa-eye"></i> View
+                </button>
+                <button class="btn btn-sm btn-warning me-2" (click)="editCustomer(customer)">
+                  <i class="fas fa-edit"></i> Edit
+                </button>
+                <button class="btn btn-sm btn-success" (click)="payCustomer(customer)">
+                  <i class="fas fa-money-bill-wave"></i> Pay
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
-  
-    <div class="row mb-3">
-      <div class="col-md-12">
-        <input type="text" class="form-control" [(ngModel)]="searchQuery" placeholder="Search Customers" (input)="filterCustomers()"/>
-      </div>
-    </div>
-  
-    <table class="table table-bordered table-hover">
-      <thead>
-        <tr>
-          <th><input type="checkbox" (change)="toggleAll($event)"/></th>
-          <th>Person ID</th>
-          <th>Last Name</th>
-          <th>First Name</th>
-          <th>E-Mail</th>
-          <th>Phone Number</th>
-          <th>Balance</th>
-          <th>Actions</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let customer of filteredCustomers">
-          <td><input type="checkbox" [(ngModel)]="customer.selected" (change)="updateSelection()"/></td>
-          <td>{{customer.personId}}</td>
-          <td>{{customer.lastName}}</td>
-          <td>{{customer.firstName}}</td>
-          <td><a [href]="'mailto:' + customer.email">{{customer.email}}</a></td>
-          <td>{{customer.phoneNumber}}</td>
-          <td>{{customer.balance}}</td>
-          <td>
-            <button class="btn btn-info" (click)="viewCustomer(customer)">View</button>
-            <button class="btn btn-warning" (click)="editCustomer(customer)">Edit</button>
-            <button class="btn btn-success" (click)="payCustomer(customer)">Pay</button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
   </div>
-  
+</div>

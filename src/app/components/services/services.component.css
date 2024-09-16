@@ -1,0 +1,24 @@
+mat-toolbar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.actions {
+  margin: 20px 0;
+  display: flex;
+  gap: 10px;
+}
+
+.mat-form-field {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.price {
+  margin-left: 20px;
+}
+
+footer {
+  margin-top: 20px;
+  text-align: center;
+}

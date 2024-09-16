@@ -1,0 +1,29 @@
+<div class="stock-items-container">
+    <h2>Stock Items</h2>
+  
+    <form [formGroup]="stockItemsForm" (ngSubmit)="addStockItem()">
+      <div>
+        <label for="itemName">Item Name:</label>
+        <input id="itemName" formControlName="itemName" />
+      </div>
+      <div>
+        <label for="quantity">Quantity:</label>
+        <input id="quantity" formControlName="quantity" type="number" />
+      </div>
+      <div>
+        <label for="price">Price:</label>
+        <input id="price" formControlName="price" type="number" />
+      </div>
+      <button type="submit">Add Item</button>
+    </form>
+  
+    <div *ngIf="stockItems.length > 0">
+      <h3>Item List</h3>
+      <ul>
+        <li *ngFor="let item of stockItems" (click)="navigateToDetails(item)">
+          {{ item.itemName }} - {{ item.quantity }} - ${{ item.price }}
+        </li>
+      </ul>
+    </div>
+  </div>
+  

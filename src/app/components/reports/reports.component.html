@@ -1,0 +1,18 @@
+<div>
+    <h1>Reports</h1>
+    <mat-list>
+      <mat-list-item *ngFor="let report of reports" (click)="selectedReport = report">
+        <mat-icon>{{ report.icon }}</mat-icon> {{ report.label }}
+      </mat-list-item>
+    </mat-list>
+  
+    <div *ngIf="selectedReport">
+      <h2>{{ selectedReport.label }}</h2>
+      <mat-list>
+        <mat-list-item *ngFor="let detail of selectedReport.details">
+          <mat-icon>{{ detail.icon }}</mat-icon> {{ detail.label }}
+        </mat-list-item>
+      </mat-list>
+    </div>
+  </div>
+  

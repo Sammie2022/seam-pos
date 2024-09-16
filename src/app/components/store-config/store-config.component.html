@@ -1,0 +1,16 @@
+<form [formGroup]="storeConfigForm">
+    <div formArrayName="tiers">
+      <div *ngFor="let tier of tiers.controls; let i = index">
+        <input [formControlName]="i" placeholder="Enter tier" />
+      </div>
+    </div>
+    <button (click)="addTier()">Add Tier</button>
+  
+    <div formArrayName="taxes">
+      <div *ngFor="let tax of taxes.controls; let i = index">
+        <input [formControlName]="i" placeholder="Enter tax" />
+      </div>
+    </div>
+    <button (click)="addTax()">Add Tax</button>
+  </form>
+  

@@ -1,0 +1,106 @@
+<div id="content-header" class="hidden-print">
+    <h1><i class="icon fa fa-home"></i> Locations</h1>
+  </div>
+  
+  <div id="breadcrumb" class="hidden-print">
+    <a href="#"><i class="fa fa-home"></i> Dashboard</a>
+    <a class="current" href="#">Locations</a>
+  </div>
+  
+  <div class="clear"></div>
+  
+  <div class="pull-right">
+    <div class="row">
+      <div class="col-md-12 center" style="text-align: center;">
+        <div class="btn-group">
+          <button (click)="openDialog()" class="btn btn-medium btn-primary" title="New Location">
+            <i title="New Location" class="fa fa-pencil fa-2x"></i>
+            <span class="visible-lg">New Location</span>
+          </button>
+          <button class="btn btn-danger disabled" title="Delete">
+            <i title="Delete" class="fa fa-trash-o fa-2x"></i>
+            <span class="visible-lg">Delete</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-md-12" style="text-align: right;">
+      <strong><a href="http://seamlineinnovations.com/buy_additional.php" target="_blank">Adding another location requires another license</a></strong>
+    </div>
+    <form action="#" method="post" id="search_form" autocomplete="off">
+      <input type="text" name="search" id="search" placeholder="Search Locations"/>
+    </form>
+  </div>
+  
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="widget-box">
+          <div class="widget-title">
+            <span class="icon">
+              <i class="fa fa-th"></i>
+            </span>
+            <h5>List of Locations</h5>
+            <span title="2 total locations" class="label label-info tip-left">2</span>
+            <a href="#" class="clear-state pull-right">Clear search</a>
+          </div>
+          <div class="widget-content nopadding table_holder table-responsive">
+            <table mat-table [dataSource]="dataSource" class="table tablesorter table-bordered table-striped table-hover" id="sortable_table">
+              <ng-container matColumnDef="select">
+                <th mat-header-cell *matHeaderCellDef>
+                  <input type="checkbox" id="select_all" />
+                </th>
+                <td mat-cell *matCellDef="let element">
+                  <input type="checkbox" [id]="'location_' + element.id" [value]="element.id"/>
+                </td>
+              </ng-container>
+              
+              <ng-container matColumnDef="id">
+                <th mat-header-cell *matHeaderCellDef>Location ID</th>
+                <td mat-cell *matCellDef="let element">{{ element.id }}</td>
+              </ng-container>
+  
+              <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef>Name</th>
+                <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+              </ng-container>
+  
+              <ng-container matColumnDef="address">
+                <th mat-header-cell *matHeaderCellDef>Address</th>
+                <td mat-cell *matCellDef="let element">{{ element.address }}</td>
+              </ng-container>
+  
+              <ng-container matColumnDef="phone">
+                <th mat-header-cell *matHeaderCellDef>Phone</th>
+                <td mat-cell *matCellDef="let element">{{ element.phone }}</td>
+              </ng-container>
+  
+              <ng-container matColumnDef="email">
+                <th mat-header-cell *matHeaderCellDef>Email</th>
+                <td mat-cell *matCellDef="let element">{{ element.email }}</td>
+              </ng-container>
+  
+              <ng-container matColumnDef="actions">
+                <th mat-header-cell *matHeaderCellDef></th>
+                <td mat-cell *matCellDef="let element">
+                  <a [href]="'#'" class="edit-link" title="Update Location">Edit</a>
+                </td>
+              </ng-container>
+  
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div id="footer" class="col-md-12 hidden-print">
+    Please visit our <a href="https://seamlineinnovations.com/" target="_blank">website</a> to learn the latest information about the system.
+    <span class="text-info">You are using SeamPos Version <span class="label label-info">1.2</span></span>
+  </div>
+  

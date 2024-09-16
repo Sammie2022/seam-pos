@@ -1,0 +1,43 @@
+<div class="mat-elevation-z8">
+    <mat-toolbar color="primary">
+      <mat-icon>inbox</mat-icon>
+      <span>Services</span>
+    </mat-toolbar>
+  
+    <div class="actions">
+      <button mat-raised-button color="primary">
+        <mat-icon>add</mat-icon>
+        New Sales Service
+      </button>
+      <button mat-raised-button color="accent" disabled>Barcode Labels</button>
+      <button mat-raised-button color="accent" disabled>Barcode Sheet</button>
+      <button mat-raised-button color="warn" disabled>Delete</button>
+      <button mat-raised-button color="accent">Excel Export</button>
+    </div>
+  
+    <mat-form-field>
+      <input matInput [formControl]="searchControl" placeholder="Search Services">
+    </mat-form-field>
+  
+    <mat-card>
+      <mat-card-title>List of Services</mat-card-title>
+      <mat-list>
+        <mat-list-item *ngFor="let service of filteredServices">
+          <mat-checkbox></mat-checkbox>
+          <span>{{ service.name }} - {{ service.description }}</span>
+          <span class="price">Cost: {{ service.costPrice | currency:'KES' }}</span>
+          <span class="price">Wholesale: {{ service.wholesalePrice | currency:'KES' }}</span>
+          <span class="price">Retail: {{ service.retailPrice | currency:'KES' }}</span>
+          <button mat-icon-button>
+            <mat-icon>edit</mat-icon>
+          </button>
+        </mat-list-item>
+      </mat-list>
+    </mat-card>
+  </div>
+  
+  <footer>
+    <span>You are using SeamPos Version 1.2</span>
+    <a href="https://seamlineinnovations.com/" target="_blank">Visit Website</a>
+  </footer>
+  

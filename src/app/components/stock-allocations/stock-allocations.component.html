@@ -1,0 +1,111 @@
+<div id="register_container" class="receiving">
+    <div id="content-header" class="hidden-print allocation-header">
+      <h1>
+        <i class="fa fa-briefcase"></i>
+        Stock Allocation
+        <span id="ajax-loader">
+          <img src="https://www.poss.seamlineinnovations.com//img/ajax-loader.gif" alt=""/>
+        </span>
+      </h1>
+    </div>
+    
+    <div class="row">
+      <!-- Left small box -->
+      <div class="sale_register_leftbox col-md-9 allocation_register_leftbox no-padd">
+        <div class="row">
+          <div class="col-md-8 no-padd">
+            <div class="input-append"></div>
+          </div>
+          <div class="col-md-4 no-padd">
+            <form action="https://www.poss.seamlineinnovations.com/index.php/allocations/change_mode" method="post" accept-charset="utf-8" id="mode_form" autocomplete="off">
+              <label>
+                Allocation Mode
+                <select name="mode" id="mode" class="input-small">
+                  <option value="allocate" selected="selected">Allocate</option>
+                  <option value="return">Return</option>
+                </select>
+              </label>
+            </form>
+          </div>
+        </div>
+        
+        <div class="row">
+          <div class="table-responsive">
+            <table id="register" class="table table-bordered">
+              <thead>
+                <tr>
+                  <th id="reg_item_del"></th>
+                  <th id="reg_item_name">Item Name</th>
+                  <th id="reg_item_price">Wholesale Price</th>
+                  <th id="reg_item_qty">Quantity</th>
+                  <th id="reg_item_total_unit">Total Wholesale Price</th>
+                </tr>
+              </thead>
+              <tbody id="cart_contents">
+                <tr class="cart_content_area">
+                  <td colspan='6' style="height:60px;border:none;">
+                    <div class='text-center text-warning'>
+                      <h3>Welcome to Seam POS</h3>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Right small box -->
+      <div class="col-md-3 sale_register_rightbox">
+        <br />
+        <ul class="list-group">
+          <li class="list-group-item nopadding">
+            <div class="sale_form_main"></div>
+          </li>
+          
+          <li class="list-group-item nopadding">
+            <div class="widget-box no_left_right_border">
+              <div class="widget-title">
+                <span class="icon">
+                  <i class="fa fa-th-list"></i>
+                </span>
+                <h5>Select Employee</h5>
+              </div>
+              <div class="widget-content">
+                <div id="customer_info_shell">
+                  <form action="https://www.poss.seamlineinnovations.com/index.php/allocations/select_employee" method="post" accept-charset="utf-8" id="select_employee_form" autocomplete="off">
+                    <input type="text" name="employee" value="Type employee's name..." id="employee" size="30"/>
+                  </form>
+                  <div id="add_customer_info">
+                    <div id="common_or">
+                      OR
+                      <a href="https://www.poss.seamlineinnovations.com/index.php/employees/view/-1/1" id="new-employee" class="btn btn-primary none" title="New Location">
+                        <div class='small_button' style='margin:0 auto;'><span>New Employee</span></div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div id='sale_details'>
+              <table id="sales_items_total" class="table">
+                <tr class="success">
+                  <td class="left"><h4>Total Wholesale Price:</h4></td>
+                  <td class="right"><h4>Ksh0.00</h4></td>
+                </tr>
+              </table>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  
+  <div id="footer" class="col-md-12 hidden-print">
+    Please visit our
+    <a href="https://seamlineinnovations.com/" target="_blank">website</a>
+    to learn the latest information about the system.
+    <span class="text-info">You are using SeamPos Version <span class="label label-info"> 1.2</span></span>
+  </div>
+  

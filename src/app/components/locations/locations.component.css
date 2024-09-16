@@ -1,0 +1,41 @@
+/* Toolbar styling */
+.mat-toolbar {
+    background: #3f51b5;
+    color: white;
+    padding: 0 16px;
+  }
+  
+  .mat-toolbar .spacer {
+    flex: 1 1 auto;
+  }
+  
+  /* Card styling */
+  mat-card {
+    margin: 20px;
+  }
+  
+  .mat-card-header {
+    background: #f5f5f5;
+  }
+  
+  /* Table styling */
+  .mat-table {
+    width: 100%;
+  }
+  
+  .mat-header-cell, .mat-cell {
+    padding: 16px;
+  }
+  
+  .mat-header-row {
+    background: #3f51b5;
+    color: white;
+  }
+  
+  /* Footer styling */
+  mat-card-footer {
+    background: #e0e0e0;
+    text-align: center;
+    padding: 10px;
+  }
+  

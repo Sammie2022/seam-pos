@@ -1,0 +1,16 @@
+.store-config-form {
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+  }
+  
+  input {
+    margin-bottom: 10px;
+    padding: 8px;
+    width: calc(100% - 16px);
+  }
+  
+  button {
+    margin: 5px 0;
+  }
+  

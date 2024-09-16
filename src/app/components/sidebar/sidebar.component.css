@@ -1,0 +1,39 @@
+/* Basic styling for the sidebar */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -250px; /* Initially hidden off-screen */
+  width: 250px;
+  height: 100%;
+  background: #2c3e50; /* Dark blue-gray color for visibility */
+  color: #ecf0f1; /* Light color for text */
+  transition: left 0.3s ease;
+  z-index: 1000; /* Ensure it appears on top */
+  overflow: auto; /* Handle overflow */
+}
+
+/* Sidebar menu styling */
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar ul li {
+  padding: 15px;
+}
+
+.sidebar ul li a {
+  color: #ecf0f1;
+  text-decoration: none;
+  display: block;
+}
+
+.sidebar ul li a:hover {
+  background: #34495e; /* Slightly lighter shade on hover */
+}
+
+/* Show sidebar when hovering over the sidebar container */
+#sidebar-container:hover .sidebar {
+  left: 0;
+}
