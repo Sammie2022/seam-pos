@@ -6,6 +6,8 @@ import { FormsModule } from '@angular/forms';
 import { DashboardComponent } from "./components/dashboard/dashboard.component";
 import { FooterComponent } from './components/footer/footer.component';
 import { ServicesComponent } from './components/services/services.component';
+import { HeaderComponent } from "./components/header/header.component";
+
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -16,7 +18,8 @@ import { ServicesComponent } from './components/services/services.component';
     FormsModule,
     FooterComponent,
     ServicesComponent,
-    DashboardComponent
+    DashboardComponent,
+    HeaderComponent,
 ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'

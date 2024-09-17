@@ -1,84 +1,206 @@
-/* Card styling */
+/* General Styling */
+body {
+  background-color: #f5f5f5;
+  font-family: 'Roboto', sans-serif;
+}
+
 .dashboard-card {
   margin: 20px;
-  padding: 20px;
-  background-color: #fafafa; /* Softer background */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
 }
 
-.welcome-text {
+.breadcrumb {
+  margin-bottom: 20px;
+  color: #424242;
+}
+
+.text-center {
   text-align: center;
-  margin: 20px 0;
-  color: #333; /* Darker text for better readability */
+  color: #424242;
 }
 
+/* Quick Actions Styling */
 .quick-actions {
   margin-top: 20px;
 }
 
-.action-card {
+.quick-actions mat-card {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #ffffff; /* Clean white background */
-  border-radius: 12px; /* Slightly more rounded corners */
-  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); /* Softer shadow */
+  flex-direction: column;
   text-align: center;
   padding: 20px;
-  transition: background-color 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+  background-color: #ffffff;
+  transition: all 0.3s ease;
+  border-radius: 8px;
 }
 
-.action-card:hover {
-  background-color: #e8f5e9; /* Light green for a refreshing look */
-  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+.quick-action-card:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  background-color: #e3f2fd; /* Light blue on hover */
 }
 
-.action-card mat-icon {
-  font-size: 48px;
-  color: #388e3c; /* Darker green for icons */
+.quick-action-icon {
+  font-size: 36px;
+  margin-bottom: 10px;
+  color: #03a9f4; /* Accent color */
 }
 
+.quick-actions a {
+  font-size: 16px;
+  font-weight: bold;
+  color: #424242;
+  text-decoration: none;
+}
+
+.quick-actions a:hover {
+  color: #03a9f4;
+}
+
+/* Statistics Section */
 .statistics {
-  margin-top: 20px;
+  margin-top: 40px;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.statistics h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #616161;
 }
 
 .stats-card {
-  background-color: #ffffff;
-  border: 1px solid #dcdcdc; /* Slightly darker border */
-  border-radius: 12px;
-  padding: 20px;
-}
-
-.stats-grid {
-  display: flex;
-  gap: 20px;
-}
-
-.stat-item {
-  flex: 1;
-  background-color: #f1f8e9; /* Very light green background */
-  border-radius: 12px;
   padding: 20px;
   text-align: center;
+  background-color: #fafafa;
+  transition: all 0.3s ease;
+  border-radius: 8px;
 }
 
-.stat-item mat-icon {
-  font-size: 36px;
-  color: #388e3c; /* Darker green for icons */
+.stats-card:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  background-color: #e8f5e9; /* Soft green on hover */
 }
 
+.stats-icon {
+  font-size: 40px;
+  color: #4caf50; /* Soft Green */
+}
+
+.stats-card h3 {
+  color: #424242;
+}
+
+.stats-card h1 {
+  color: #4caf50;
+}
+
+.stats-card a {
+  color: #03a9f4;
+  text-decoration: none;
+}
+
+.stats-card a:hover {
+  color: #3f51b5;
+}
+
+/* Footer Styling */
 .footer {
-  margin-top: 20px;
-  padding: 10px;
-  background-color: #388e3c; /* Darker green background */
-  color: #fff;
+  margin-top: 50px;
   text-align: center;
+  background-color: #eeeeee;
+  padding: 10px;
+  color: #757575;
 }
 
 .footer a {
-  color: #c8e6c9; /* Light green for links */
+  color: #3f51b5; /* Primary color */
 }
 
-.footer .text-info {
+.footer a:hover {
+  color: #03a9f4; /* Accent color */
+}
+
+.text-info {
+  color: #4caf50; /* Soft green */
+}
+
+/* Sidebar Styling */
+.sidebar {
+  width: 250px;
+  background-color: #3f51b5; /* Primary color */
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  overflow-x: hidden;
+  padding-top: 20px;
+  transition: 0.3s;
+}
+
+.sidebar a {
+  padding: 15px 25px;
+  text-decoration: none;
+  font-size: 18px;
+  color: #ffffff;
   display: block;
-  margin-top: 10px;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  background-color: #303f9f; /* Darker shade of primary */
+}
+
+.sidebar .close-btn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.main-content {
+  margin-left: 250px;
+  padding: 20px;
+  transition: margin-left 0.3s;
+}
+
+.sidebar-hidden .main-content {
+  margin-left: 0;
+}
+
+.sidebar-hidden .sidebar {
+  width: 0;
+  padding: 0;
+}
+
+.sidebar-hidden .sidebar a {
+  visibility: hidden;
+}
+
+/* Responsive Sidebar */
+@media screen and (max-width: 768px) {
+  .sidebar {
+    width: 0;
+    visibility: hidden;
+  }
+
+  .sidebar-active {
+    width: 250px;
+    visibility: visible;
+  }
+
+  .main-content {
+    margin-left: 0;
+  }
+
+  .main-content-active {
+    margin-left: 250px;
+  }
 }

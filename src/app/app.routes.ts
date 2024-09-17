@@ -14,6 +14,8 @@ import { ShopSalesComponent } from './components/shop-sales/shop-sales.component
 import { EmployeesComponent } from './components/employees/employees.component';
 import { StoreConfigComponent } from './components/store-config/store-config.component';
 import { LocationsComponent } from './components/locations/locations.component';
+import { LogoutComponent } from './components/logout/logout.component'; // Import LogoutComponen
+import { LoginComponent } from './components/login/login.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
@@ -31,7 +33,8 @@ export const routes: Routes = [
   { path: 'employees', component: EmployeesComponent },
   { path: 'config', component: StoreConfigComponent },
   { path: 'locations', component: LocationsComponent },
-  // other routes can go here
+  { path: 'logout', component: LogoutComponent },
+  { path: 'login', component: LocationsComponent}
 ];
 
 @NgModule({

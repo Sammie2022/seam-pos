@@ -1,13 +1,14 @@
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router'; // Import RouterModule
+import { Router } from '@angular/router'; // Import Router for navigation
 import { CommonModule } from '@angular/common'; // Import CommonModule for ngFor
+import { RouterModule } from '@angular/router'; // Import RouterModule for routing
 
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.css'],
   standalone: true,
-  imports: [CommonModule, RouterModule] // Add CommonModule here
+  imports: [CommonModule, RouterModule] // Add CommonModule and RouterModule here
 })
 export class SidebarComponent {
   menuItems = [
@@ -25,4 +26,12 @@ export class SidebarComponent {
     { title: 'Store Config', icon: 'fa-cogs', link: '/config' },
     { title: 'Locations', icon: 'fa-home', link: '/locations' }
   ];
+
+  constructor(private router: Router) {} // Inject Router
+
+  logout() {
+    // Perform logout logic here, like clearing user data, tokens, etc.
+    // Navigate to the login page or a public page after logging out
+    this.router.navigate(['/login']); // Adjust the route as needed
+  }
 }

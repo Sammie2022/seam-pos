@@ -1,20 +1,24 @@
-<body>
-  <div class="sidebar">
+<div id="sidebar-container">
+  <aside class="sidebar">
     <ul>
-      <li><a href="/customers">Customers</a></li>
-      <li><a href="/items">Stock Items</a></li>
-      <li><a href="/services">Services</a></li>
-      <li><a href="/expenses">Expenses</a></li>
-      <li><a href="/suppliers">Suppliers</a></li>
-      <li><a href="/reports">Reports</a></li>
-      <li><a href="/receivings">Receivings</a></li>
-      <li><a href="/allocations">Stock Allocations</a></li>
-      <li><a href="/employee_sales">Field Sales</a></li>
-      <li><a href="/sales">Shop Sales</a></li>
-      <li><a href="/employees">Employees</a></li>
-      <li><a href="/config">Store Config</a></li>
-      <li><a href="/locations">Locations</a></li>
+      <li><a routerLink="/customers">Customers</a></li>
+      <li><a routerLink="/items">Stock Items</a></li>
+      <li><a routerLink="/services">Services</a></li>
+      <li><a routerLink="/expenses">Expenses</a></li>
+      <li><a routerLink="/suppliers">Suppliers</a></li>
+      <li><a routerLink="/reports">Reports</a></li>
+      <li><a routerLink="/receivings">Receivings</a></li>
+      <li><a routerLink="/allocations">Stock Allocations</a></li>
+      <li><a routerLink="/employee_sales">Field Sales</a></li>
+      <li><a routerLink="/sales">Shop Sales</a></li>
+      <li><a routerLink="/employees">Employees</a></li>
+      <li><a routerLink="/config">Store Config</a></li>
+      <li><a routerLink="/locations">Locations</a></li>
+      <li><a (click)="logout()">Logout</a></li>
     </ul>
+  </aside>
+
+  <div class="main-content">
+    <!-- Your main content goes here -->
   </div>
-  <!-- Rest of your page content -->
-</body>
+</div>

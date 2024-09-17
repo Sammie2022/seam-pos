@@ -12,6 +12,12 @@
   overflow: auto;
 }
 
+/* Sidebar container */
+#sidebar-container {
+  position: relative;
+  height: 100%; /* Ensure the container is full height */
+}
+
 /* Show sidebar when hovering over the sidebar container */
 #sidebar-container:hover .sidebar {
   left: 0;

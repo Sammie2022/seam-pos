@@ -1,8 +1,52 @@
-<div id="content-header" class="hidden-print">
-    <h1><i class="icon fa fa-dashboard"></i> {{ title }}</h1>
-  </div>
+<header id="header">
+  <h1>
+    <a href="/">
+      <img src="https://www.poss.seamlineinnovations.com/img/seamlogo.png" alt="Seam POS Logo" />
+    </a>
+  </h1>
+  <a id="menu-trigger" href="#"><i class="fa fa-bars fa fa-2x"></i></a>
   
-  <div id="breadcrumb" class="hidden-print">
-    <a href="#"><i class="fa fa-home"></i> {{ title }}</a>
+  <div id="user-nav" class="hidden-xs">
+    <ul class="btn-group">
+      <li class="btn">
+        <a title="Switch User" href="#" (click)="onUserSwitch()">
+          <i class="icon fa fa-user fa-2x"></i> 
+          <span class="text">Welcome <b>{{ username }}</b></span>
+        </a>
+      </li>
+      <li class="btn disabled">
+        <a title="Current Time" href="#">
+          <i class="icon fa fa-clock-o fa-2x"></i> 
+          <span class="text">{{ currentTime }}</span>
+        </a>
+      </li>
+      <li class="btn">
+        <a href="/settings">
+          <i class="icon fa fa-cog"></i>
+          <span class="text">Settings</span>
+        </a>
+      </li>
+      <li class="btn">
+        <a href="/logout">
+          <i class="fa fa-power-off"></i>
+          <span class="text">Logout</span>
+        </a>
+      </li>
+    </ul>
   </div>
-  
+</header>
+
+<aside id="sidebar" class="minibar">
+  <ul>
+    <li id="location-top" class="location-drops">
+      <select (change)="onLocationChange($event)">
+        <option value="1" [selected]="currentLocation === 'Seam POS Main'">Seam POS Main</option>
+        <option value="36" [selected]="currentLocation === 'Seam POS Nakuru'">Seam POS Nakuru</option>
+      </select>
+    </li>
+    <li><a href="/"><i class="icon fa fa-dashboard"></i><span>Dashboard</span></a></li>
+    <li><a href="/customers"><i class="fa fa-group"></i><span>Customers</span></a></li>
+    <!-- Add other links here -->
+    <li><a href="/logout"><i class="fa fa-power-off"></i><span>Logout</span></a></li>
+  </ul>
+</aside>

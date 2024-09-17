@@ -1,0 +1,16 @@
+/* logout.component.css */
+.logout-container {
+    text-align: center;
+    padding: 50px;
+  }
+  
+  .logout-container h1 {
+    font-size: 2em;
+    color: #2c3e50;
+  }
+  
+  .logout-container p {
+    font-size: 1.2em;
+    color: #7f8c8d;
+  }
+  

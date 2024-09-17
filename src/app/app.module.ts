@@ -25,6 +25,9 @@ import { SuppliersComponent } from './components/suppliers/suppliers.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { FieldSalesComponent } from './components/field-sales/field-sales.component';
+import { LoginComponent } from './components/login/login.component';
+import { LogoutComponent } from './components/logout/logout.component';
+import { HeaderComponent } from './components/header/header.component';
 
 @Component({
   selector: 'app-root',
@@ -33,6 +36,9 @@ import { FieldSalesComponent } from './components/field-sales/field-sales.compon
   standalone: true,
   imports: [
     RouterModule,
+    LoginComponent,
+    LogoutComponent,
+    HeaderComponent,
     SuppliersComponent,
     HttpClientModule,
     MatCheckboxModule,
