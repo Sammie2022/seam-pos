@@ -6,7 +6,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { CommonModule } from '@angular/common';
 import { MatListModule } from '@angular/material/list'; // for list items
 import { Router } from '@angular/router';
-
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -14,6 +14,7 @@ import { Router } from '@angular/router';
   imports: [
     MatButtonModule,
     MatCardModule,
+    RouterModule,
     MatIconModule,
     MatGridListModule,
     MatListModule,
