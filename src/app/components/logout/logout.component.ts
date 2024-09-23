@@ -17,12 +17,12 @@ export class LogoutComponent implements OnInit {
   }
 
   logout() {
-    // Clear user session or token here
-    localStorage.removeItem('userToken');
-    
-    // Redirect to login page after logout
-    setTimeout(() => {
-      this.router.navigate(['/login']);
-    }, 2000); // Delay for user to see the logout message
+    if (typeof window !== 'undefined' && window.localStorage) {
+      // Clear user session
+      localStorage.removeItem('token');
+    }
+    // Redirect to login page
+    this.router.navigate(['/login']);
   }
+  
 }

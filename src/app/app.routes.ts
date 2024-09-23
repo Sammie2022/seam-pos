@@ -34,7 +34,7 @@ export const routes: Routes = [
   { path: 'config', component: StoreConfigComponent },
   { path: 'locations', component: LocationsComponent },
   { path: 'logout', component: LogoutComponent },
-  { path: 'login', component: LocationsComponent}
+  { path: 'login', component: LoginComponent}
 ];
 
 @NgModule({

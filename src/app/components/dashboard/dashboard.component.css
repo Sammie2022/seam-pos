@@ -1,58 +1,56 @@
-.dashboard-container {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  padding: 20px;
+.container-fluid {
+  background-color: #e9ecef; /* Light gray background for the entire container */
 }
 
-.system-info {
-  margin-bottom: 20px;
+.header {
+  background-color: #007bff; /* Bootstrap primary color for header */
+  color: white; /* White text for contrast */
+  padding: 20px; /* Add padding for better spacing */
+  border-radius: 5px; /* Rounded corners */
 }
 
-.stats-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: space-around;
+.quick-actions-title {
+  color: #28a745; /* Green color for Quick Actions title */
 }
 
-.stat-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 10px;
+.list-group-item {
+  background-color: #f7f7f7; /* Light background for quick actions */
+  transition: background-color 0.3s; /* Smooth transition for hover */
 }
 
-.stat-card mat-icon {
-  font-size: 40px;
-  color: #3f51b5;
+.list-group-item:hover {
+  background-color: #d4edda; /* Light green background on hover */
 }
 
-.stat-card h2 {
-  margin: 10px 0;
+.card-statistics {
+  transition: transform 0.3s;
 }
 
-.stat-card p {
-  font-size: 1.5em;
+.card-statistics:hover {
+  transform: translateY(-5px); /* Slight lift on hover */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
+
+.action-title {
+  flex-grow: 1;
   font-weight: bold;
+  color: #333; /* Dark text for better readability */
 }
 
-.quick-actions {
-  margin-top: 20px;
+.btn-link {
+  color: #007bff; /* Bootstrap primary color */
 }
 
-.quick-actions mat-list-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.btn-light {
+  background-color: #ffffff; /* Light button for contrast */
+  color: #333; /* Dark text for better readability */
 }
 
-.quick-actions mat-icon {
-  color: #3f51b5;
+footer a {
+  color: #007bff; /* Link color */
+  text-decoration: none; /* Remove underline */
 }
 
-.quick-actions h3 {
-  font-weight: 500;
+footer a:hover {
+  text-decoration: underline; /* Underline on hover */
 }

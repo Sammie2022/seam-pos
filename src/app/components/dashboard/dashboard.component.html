@@ -1,104 +1,54 @@
-<!-- Sidebar -->
-<div class="sidebar" id="sidebar">
-  <a href="javascript:void(0)" class="close-btn" (click)="toggleSidebar()">&times;</a>
-  <a mat-button routerLink="/customers">
-    <mat-icon>group</mat-icon> Customers
-  </a>
-  <a mat-button routerLink="/items">
-    <mat-icon>table</mat-icon> Stock Items
-  </a>
-  <a mat-button routerLink="/item_kits">
-    <mat-icon>inbox</mat-icon> Services
-  </a>
-  <a mat-button routerLink="/expenses">
-    <mat-icon>money</mat-icon> Expenses
-  </a>
-  <a mat-button routerLink="/suppliers">
-    <mat-icon>download</mat-icon> Suppliers
-  </a>
-  <a mat-button routerLink="/reports">
-    <mat-icon>bar_chart</mat-icon> Reports
-  </a>
-  <a mat-button routerLink="/receivings">
-    <mat-icon>cloud_download</mat-icon> Receivings
-  </a>
-  <a mat-button routerLink="/allocations">
-    <mat-icon>location_on</mat-icon> Stock Allocations
-  </a>
-  <a mat-button routerLink="/employee_sales">
-    <mat-icon>shopping_cart</mat-icon> Field Sales
-  </a>
-  <a mat-button routerLink="/sales">
-    <mat-icon>shopping_cart</mat-icon> Shop Sales
-  </a>
-  <a mat-button routerLink="/employees">
-    <mat-icon>person</mat-icon> Employees
-  </a>
-  <a mat-button routerLink="/config">
-    <mat-icon>cogs</mat-icon> Store Config
-  </a>
-  <a mat-button routerLink="/locations">
-    <mat-icon>home</mat-icon> Locations
-  </a>
-</div>
+<div class="container-fluid">
+  <header class="text-center my-4 header">
+    <h1>Welcome to <b>Seam POS</b></h1>
+  </header>
 
-<!-- Main Content -->
-<div class="main-content" id="main-content">
-  <mat-card class="dashboard-card">
-    <mat-card-header>
-      <mat-card-title>
-        <mat-icon>dashboard</mat-icon> Dashboard
-      </mat-card-title>
-    </mat-card-header>
+  <h3 class="mt-5 text-center quick-actions-title">Quick Actions</h3>
+  <div class="row my-4">
+    <div class="col-md-12">
+      <ul class="list-group">
+        <li *ngFor="let action of quickActions" class="list-group-item d-flex justify-content-between align-items-center action-item">
+          <i class="fa {{ action.icon }} mr-2"></i>
+          <span class="action-title">{{ action.title }}</span>
+          <a [routerLink]="action.link" class="btn btn-link">Go</a>
+        </li>
+      </ul>
+    </div>
+  </div>
 
-    <mat-card-content>
-      <!-- Breadcrumb -->
-      <div class="breadcrumb">
-        <a mat-button routerLink="/">
-          <mat-icon>home</mat-icon> Dashboard
-        </a>
+  <h3 class="mt-5 text-center statistics-title">Statistics</h3>
+  <div class="row my-4">
+    <div class="col-md-4">
+      <div class="card text-center card-statistics">
+        <div class="card-header bg-primary text-white">Total Stock Items</div>
+        <div class="card-body">
+          <h5 class="card-title">{{ statistics.totalStockItems }}</h5>
+          <a [routerLink]="['/items']" class="btn btn-light">View Details</a>
+        </div>
       </div>
-
-      <!-- Welcome Text -->
-      <div class="text-center welcome-text">
-        <h1>Welcome to <b>Seam POS</b></h1>
+    </div>
+    <div class="col-md-4">
+      <div class="card text-center card-statistics">
+        <div class="card-header bg-success text-white">Total Customers</div>
+        <div class="card-body">
+          <h5 class="card-title">{{ statistics.totalCustomers }}</h5>
+          <a [routerLink]="['/customers']" class="btn btn-light">View Details</a>
+        </div>
       </div>
-
-      <!-- Quick Actions -->
-      <div class="quick-actions">
-        <mat-grid-list cols="4" rowHeight="100px" gutterSize="20px">
-          <mat-grid-tile *ngFor="let action of quickActions">
-            <mat-card class="quick-action-card">
-              <mat-icon class="quick-action-icon">{{ action.icon }}</mat-icon>
-              <a [href]="action.link">{{ action.title }}</a>
-            </mat-card>
-          </mat-grid-tile>
-        </mat-grid-list>
+    </div>
+    <div class="col-md-4">
+      <div class="card text-center card-statistics">
+        <div class="card-header bg-warning text-white">Total Employees</div>
+        <div class="card-body">
+          <h5 class="card-title">{{ statistics.totalEmployees }}</h5>
+          <a [routerLink]="['/employees']" class="btn btn-light">View Details</a>
+        </div>
       </div>
+    </div>
+  </div>
 
-      <!-- Statistics -->
-      <div class="statistics">
-        <mat-grid-list cols="3" rowHeight="150px" gutterSize="20px">
-          <mat-grid-tile *ngFor="let stat of stats">
-            <mat-card class="stats-card">
-              <mat-card-header>
-                <mat-icon class="stats-icon">{{ stat.icon }}</mat-icon>
-              </mat-card-header>
-              <mat-card-content>
-                <h3>{{ stat.title }}</h3>
-                <h1>{{ stat.value }}</h1>
-                <a [href]="stat.link" mat-button>Details</a>
-              </mat-card-content>
-            </mat-card>
-          </mat-grid-tile>
-        </mat-grid-list>
-      </div>
-    </mat-card-content>
-  </mat-card>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <p>Please visit our <a href="https://seamlineinnovations.com/" target="_blank">website</a> to learn more.</p>
-    <p><span class="text-info">You are using SeamPos Version <span class="label label-info">1.2</span></span></p>
+  <footer class="text-center my-4">
+    <p>Please visit our <a href="https://seamlineinnovations.com/" target="_blank">website</a> for more information.</p>
+    <p>You are using SeamPos Version <span class="badge badge-info">1.2</span></p>
   </footer>
 </div>

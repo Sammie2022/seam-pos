@@ -1,0 +1,12 @@
+/* styles.css or app.component.css */
+.main-container {
+    display: flex; /* Align sidebar and main content */
+    flex: 1; /* Allow it to take full height */
+  }
+  
+  .dashboard {
+    flex: 1; /* Main content area */
+    padding: 20px; /* Padding for the dashboard */
+    overflow: auto; /* Add scroll if needed */
+  }
+  

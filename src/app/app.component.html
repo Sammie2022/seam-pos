@@ -1,10 +1,13 @@
-<!-- Header Component -->
+<!-- app.component.html -->
 <app-header></app-header>
 
-<!-- Sidebar and Main Content -->
-<app-sidebar></app-sidebar>
+<div class="main-container">
 
-<!-- Main content -->
-<div class="main-content">
-  <router-outlet></router-outlet>
+  <div class="dashboard">
+    <router-outlet></router-outlet> <!-- This will load the dashboard component -->
+  </div>
 </div>
+
+<app-footer></app-footer>
+<router-outlet></router-outlet>
+

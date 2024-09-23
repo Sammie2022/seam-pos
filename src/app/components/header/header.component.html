@@ -1,10 +1,10 @@
-<header id="header">
+<header id="header" (mouseenter)="showSidebarOnHover()" (mouseleave)="hideSidebar()">
   <h1>
     <a href="/">
       <img src="https://www.poss.seamlineinnovations.com/img/seamlogo.png" alt="Seam POS Logo" />
     </a>
   </h1>
-  <a id="menu-trigger" href="#"><i class="fa fa-bars fa fa-2x"></i></a>
+  <a id="menu-trigger" href="#" (click)="toggleSidebar()"><i class="fa fa-bars fa-2x"></i></a>
   
   <div id="user-nav" class="hidden-xs">
     <ul class="btn-group">
@@ -36,7 +36,7 @@
   </div>
 </header>
 
-<aside id="sidebar" class="minibar">
+<aside id="sidebar" class="minibar" [ngClass]="{'visible': showSidebar}">
   <ul>
     <li id="location-top" class="location-drops">
       <select (change)="onLocationChange($event)">

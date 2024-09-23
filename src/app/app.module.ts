@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router'; // For routing
 import { FormsModule } from '@angular/forms'; // For template-driven forms
-import { SidebarComponent } from './components/sidebar/sidebar.component'; // Path to SidebarComponent
 import { StockItemsComponent } from './components/stock-items/stock-items.component'; // Path to StockItemsComponent
 import { MatSelectModule } from '@angular/material/select';
 import { MatOptionModule } from '@angular/material/core';
@@ -28,6 +27,7 @@ import { FieldSalesComponent } from './components/field-sales/field-sales.compon
 import { LoginComponent } from './components/login/login.component';
 import { LogoutComponent } from './components/logout/logout.component';
 import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @Component({
   selector: 'app-root',
@@ -39,12 +39,12 @@ import { HeaderComponent } from './components/header/header.component';
     LoginComponent,
     LogoutComponent,
     HeaderComponent,
+    FooterComponent,
     SuppliersComponent,
     HttpClientModule,
     MatCheckboxModule,
     MatButtonModule,
     FieldSalesComponent,
-    SidebarComponent, 
     StockItemsComponent,
     StockAllocationsComponent,
     StoreConfigComponent,

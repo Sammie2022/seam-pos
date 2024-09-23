@@ -1,26 +1,37 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-header',
+  standalone: true,
+  imports: [CommonModule], // Make sure CommonModule is included
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css'],
-  standalone: true
 })
 export class HeaderComponent {
-  currentLocation = 'Seam POS Main'; // Mock current location
-  username = 'Admin Administrator'; // Mock username
-  currentTime = new Date().toLocaleString(); // Mock current time
+  username: string = 'User'; // Replace with your logic to get the username
+  currentTime: string = new Date().toLocaleTimeString();
+  currentLocation: string = 'Seam POS Main'; // Replace with your logic for the location
+  showSidebar: boolean = false; // Define the showSidebar property
 
-  // Method to handle location change
-  onLocationChange(event: Event): void {
-    const target = event.target as HTMLSelectElement;
-    this.currentLocation = target.value;
-    // Perform any other actions required when location changes
+  onUserSwitch() {
+    // Your logic for switching user
   }
 
-  // Method to handle user switch (You can implement your logic here)
-  onUserSwitch(): void {
-    // Placeholder for user switch functionality
-    alert('User switch functionality is not implemented.');
+  onLocationChange(event: Event) {
+    // Your logic for changing location
+  }
+
+  // Control visibility of the sidebar
+  toggleSidebar() {
+    this.showSidebar = !this.showSidebar;
+  }
+
+  showSidebarOnHover() {
+    this.showSidebar = true;
+  }
+
+  hideSidebar() {
+    this.showSidebar = false;
   }
 }
