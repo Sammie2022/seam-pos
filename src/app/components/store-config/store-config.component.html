@@ -1,111 +1,28 @@
 <form [formGroup]="storeConfigForm" (ngSubmit)="submit()">
-  <div class="form-group">
-    <label for="number_of_items_per_page" class="control-label required">Number Of Items Per Page:</label>
-    <select formControlName="number_of_items_per_page" id="number_of_items_per_page">
-      <option value="20">20</option>
-      <option value="50">50</option>
-      <option value="100">100</option>
-      <option value="200">200</option>
-      <option value="500" selected>500</option>
-    </select>
-  </div>
-
-  <div class="form-group">
-    <label for="track_cash" class="control-label">Track Cash In Register:</label>
-    <input type="checkbox" formControlName="track_cash" id="track_cash" />
-  </div>
-
-  <div class="form-group">
-    <label for="hide_suspended_sales_in_reports" class="control-label">Hide Suspended Sales In Reports?</label>
-    <input type="checkbox" formControlName="hide_suspended_sales_in_reports" id="hide_suspended_sales_in_reports" />
-  </div>
-
-  <div class="form-group">
-    <label for="hide_store_account_payments_in_reports" class="control-label">Hide Store Account Payments In Reports:</label>
-    <input type="checkbox" formControlName="hide_store_account_payments_in_reports" id="hide_store_account_payments_in_reports" />
-  </div>
-
-  <div class="form-group">
-    <label for="change_sale_date_when_suspending" class="control-label">Change Sale Date When Suspending Sale:</label>
-    <input type="checkbox" formControlName="change_sale_date_when_suspending" id="change_sale_date_when_suspending" />
-  </div>
-
-  <div class="form-group">
-    <label for="change_sale_date_when_completing_suspended_sale" class="control-label">Change Sale Date When Completing Suspended Sale:</label>
-    <input type="checkbox" formControlName="change_sale_date_when_completing_suspended_sale" id="change_sale_date_when_completing_suspended_sale" />
-  </div>
-
-  <div class="form-group">
-    <label for="show_receipt_after_suspending_sale" class="control-label">Show Receipt After Suspending Sale:</label>
-    <input type="checkbox" formControlName="show_receipt_after_suspending_sale" id="show_receipt_after_suspending_sale" />
-  </div>
-
-  <div class="form-group">
-    <label for="calculate_average_cost_price_from_receivings" class="control-label">Calculate Average Cost Price From Receivings:</label>
-    <input type="checkbox" formControlName="calculate_average_cost_price_from_receivings" id="calculate_average_cost_price_from_receivings" />
-  </div>
-
-  <div id="average_cost_price_from_receivings_methods" *ngIf="storeConfigForm.get('calculate_average_cost_price_from_receivings')?.value">
-    <div class="form-group">
-      <label for="averaging_method" class="control-label">Averaging Method:</label>
-      <select formControlName="averaging_method" id="averaging_method">
-        <option value="moving_average" selected>Moving Average</option>
-        <option value="historical_average">Historical Average</option>
-      </select>
-    </div>
-  </div>
-
-  <div class="form-group">
-    <label for="hide_dashboard_statistics" class="control-label">Hide Dashboard Statistics:</label>
-    <input type="checkbox" formControlName="hide_dashboard_statistics" id="hide_dashboard_statistics" />
-  </div>
-
-  <div class="form-group">
-    <label for="return_policy" class="control-label required">Return Policy:</label>
-    <textarea formControlName="return_policy" id="return_policy" cols="30" rows="4"></textarea>
-  </div>
-
-  <div class="form-group">
-    <label for="additional_payment_types" class="control-label">Payment Types:</label>
-    <input type="text" formControlName="additional_payment_types" id="additional_payment_types" />
-  </div>
-
-  <div class="form-group">
-    <label for="default_payment_type" class="control-label">Default Payment Type:</label>
-    <select formControlName="default_payment_type" id="default_payment_type">
-      <option value="Cash" selected>Cash</option>
-      <option value="Cheque">Cheque</option>
-      <option value="Gift Card">Gift Card</option>
-      <option value="Debit Card">Debit Card</option>
-      <option value="Credit Card">Credit Card</option>
-      <option value="Credit Account">Credit Account</option>
-      <option value="Till No.">Till No.</option>
-      <option value="Pay Bill">Pay Bill</option>
-      <option value="Credit">Credit</option>
-      <option value="Bank A/c">Bank A/c</option>
-    </select>
-  </div>
-
-  <div class="form-group">
-    <label for="tiers" class="control-label">Price Tiers:</label>
-    <table id="price_tiers">
+  <div formArrayName="tiers">
+    <table>
       <thead>
         <tr>
           <th>Tier Name</th>
-          <th>Delete</th>
+          <th>Action</th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let tier of tiers.controls; let i = index">
-          <td><input type="text" [formControl]="tier as FormControl" /></td>
-          <td><button type="button" (click)="removeTier(i)">Delete</button></td>
+          <td>
+            <input
+              type="text"
+              [formControl]="getFormControl(i)"
+              placeholder="Tier Name"
+            />
+          </td>
+          <td>
+            <button type="button" (click)="removeTier(i)">Delete</button>
+          </td>
         </tr>
       </tbody>
     </table>
-    <button type="button" (click)="addTier()">Add Tier</button>
   </div>
-
-  <div class="form-actions">
-    <button type="submit" class="btn btn-primary">Submit</button>
-  </div>
+  <button type="button" (click)="addTier()">Add Tier</button>
+  <button type="submit">Submit</button>
 </form>

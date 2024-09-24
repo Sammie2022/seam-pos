@@ -13,29 +13,7 @@ import { CommonModule } from '@angular/common'; // Import CommonModule
   styleUrls: ['./dashboard.component.css'],
 })
 export class DashboardComponent {
-  username = 'User'; // replace with actual username logic
-  currentTime = new Date().toLocaleTimeString();
-  currentLocation = 'Seam POS Main';
-
-  sidebarVisible = false; // track visibility of sidebar
-
-  showSidebar() {
-    this.sidebarVisible = true;
-  }
-
-  hideSidebar() {
-    this.sidebarVisible = false;
-  }
-
-  onLocationChange(event: Event) {
-    const selectElement = event.target as HTMLSelectElement;
-    this.currentLocation = selectElement.options[selectElement.selectedIndex].text;
-  }
-
-  onUserSwitch() {
-    // Add logic for user switch
-  }
-
+  
   statistics = {
     totalStockItems: 856,
     totalCustomers: 3,
