@@ -36,17 +36,3 @@
   </div>
 </header>
 
-<aside id="sidebar" class="minibar" [ngClass]="{'visible': showSidebar}">
-  <ul>
-    <li id="location-top" class="location-drops">
-      <select (change)="onLocationChange($event)">
-        <option value="1" [selected]="currentLocation === 'Seam POS Main'">Seam POS Main</option>
-        <option value="36" [selected]="currentLocation === 'Seam POS Nakuru'">Seam POS Nakuru</option>
-      </select>
-    </li>
-    <li><a href="/"><i class="icon fa fa-dashboard"></i><span>Dashboard</span></a></li>
-    <li><a href="/customers"><i class="fa fa-group"></i><span>Customers</span></a></li>
-    <!-- Add other links here -->
-    <li><a href="/logout"><i class="fa fa-power-off"></i><span>Logout</span></a></li>
-  </ul>
-</aside>

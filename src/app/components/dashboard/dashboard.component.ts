@@ -33,6 +33,7 @@ export class DashboardComponent {
     { title: 'Employees', icon: 'fa-users', link: '/employees' },
     { title: 'Store Config', icon: 'fa-cog', link: '/config' }, // Added Store Config
     { title: 'Stock Allocations', icon: 'fa-clipboard', link: '/allocations' }, // Added Stock Allocations
+    { title: 'Welcome User', icon: 'fa-smile', link: '/login' },
     { title: 'Locations', icon: 'fa-map-marker-alt', link: '/locations' }, // Added Locations
   ];
 }
