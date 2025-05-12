@@ -6,7 +6,6 @@
   
   .dashboard {
     flex: 1; /* Main content area */
-    padding: 20px; /* Padding for the dashboard */
+    padding: 20px; 
     overflow: auto; /* Add scroll if needed */
   }
-  
